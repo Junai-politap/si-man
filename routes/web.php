@@ -27,7 +27,7 @@ Route::prefix('pegawai')->group(function(){
 });
 
 
-
+Route::get('/', [AuthController::class, 'login']);
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'LoginProses']);
 Route::get('logout', [AuthController::class, 'logout']);

@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\SuperAdmin;
+
 use App\Models\Kelas;
 use App\Models\PesertaDidik;
 use App\Models\DataCover;
 use App\Models\Mapel;
 use App\Models\Nilai;
+use App\Models\SuperAdmin;
+use App\Models\User;
 
 class SuperAdminController extends Controller
 {
@@ -16,7 +18,7 @@ class SuperAdminController extends Controller
     public function index()
     {
        
-        $data ['list_superadmin'] = SuperAdmin::all();
+        $data ['list_superadmin'] = User::all();
         return view('super-admin.super-admin.index', $data);
     }
 
@@ -32,7 +34,7 @@ class SuperAdminController extends Controller
         $superadmin->nama = request('nama');
         $superadmin->username = request('username');
         $superadmin->email = request('email');
-        $superadmin->password = bcrypt(request('password'));
+        $superadmin->password = request('password');
         $superadmin->save();
 
         return redirect('super-admin/super-admin')->with('success', 'Data berhasil ditambahkan');
@@ -57,7 +59,7 @@ class SuperAdminController extends Controller
         $superadmin->nama = request('nama');    
         $superadmin->username = request('username');
         $superadmin->email = request('email');
-        if(request('password')) $superadmin->password = bcrypt(request('password'));
+        if(request('password')) $superadmin->password = request('password');
         $superadmin->save();
 
         return redirect('super-admin/super-admin')->with('success', 'Data berhasil diubah');

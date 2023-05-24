@@ -1,9 +1,8 @@
 <?php
-
+use App\Models\User;
 use App\Models\Admin;
-use App\Models\SuperAdmin;
 use App\Models\Pegawai;
-
+use App\Models\SuperAdmin;
 return [
 
     /*
@@ -45,11 +44,6 @@ return [
             'provider' => 'users',
         ],
 
-        'super-admin' => [
-            'driver' => 'session',
-            'provider' => 'super-admin',
-        ],
-
         'admin' => [
             'driver' => 'session',
             'provider' => 'admin',
@@ -59,6 +53,13 @@ return [
             'driver' => 'session',
             'provider' => 'pegawai',
         ],
+
+        
+        'super-admin' => [
+            'driver' => 'session',
+            'provider' => 'super-admin',
+        ],
+        
     ],
 
     /*
@@ -84,11 +85,6 @@ return [
             'model' => App\Models\User::class,
         ],
         
-        'super-admin' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\SuperAdmin::class,
-        ],
-
         'admin' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
@@ -97,6 +93,11 @@ return [
         'pegawai' => [
             'driver' => 'eloquent',
             'model' => App\Models\Pegawai::class,
+        ],
+
+        'super-admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\SuperAdmin::class,
         ],
 
         // 'users' => [
