@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('super-admin')->group(function(){
+    include "_/super-admin.php";
 });
+
+
+Route::prefix('admin')->group(function(){
+    include "_/admin.php";
+});
+
+Route::prefix('pegawai')->group(function(){
+    include "_/pegawai.php";
+});
+
+
+
+Route::get('login', [AuthController::class, 'login'])->name('login');
+Route::post('login', [AuthController::class, 'LoginProses']);
+Route::get('logout', [AuthController::class, 'logout']);
