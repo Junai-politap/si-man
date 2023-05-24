@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{url('superadmin/superadmin')}}" class="btn btn-dark"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="{{url('super-admin/super-admin')}}" class="btn btn-dark"><i class="fa fa-arrow-left"></i> Kembali</a>
             <div class="card mt-2">
                 <div class="card-header">
                     <div class="card-title">Tambah Super Admin</div>

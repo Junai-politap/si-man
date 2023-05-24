@@ -28,7 +28,7 @@ class PegawaiController extends Controller
         $pegawai->nama = request('nama');
         $pegawai->username = request('username');
         $pegawai->email = request('email');
-        $pegawai->password = bcrypt(request('password'));
+        $pegawai->password = request('password');
         $pegawai->save();
 
         return redirect('super-admin/pegawai')->with('success', 'Data berhasil ditambahkan');
@@ -53,7 +53,7 @@ class PegawaiController extends Controller
         $pegawai->nama = request('nama'); 
         $pegawai->username = request('username');
         $pegawai->email = request('email');
-        if(request('password')) $pegawai->password = bcrypt(request('password'));
+        if(request('password')) $pegawai->password = request('password');
         $pegawai->save();
 
         return redirect('super-admin/pegawai')->with('success', 'Data berhasil diubah');

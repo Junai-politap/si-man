@@ -28,7 +28,7 @@ class AdminController extends Controller
         $admin->nama = request('nama');  
         $admin->username = request('username');
         $admin->email = request('email');
-        $admin->password = bcrypt(request('password'));
+        $admin->password = request('password');
         $admin->save();
 
         return redirect('super-admin/admin')->with('success', 'Data berhasil ditambahkan');
@@ -55,7 +55,7 @@ class AdminController extends Controller
         $admin->username = request('username');
         $admin->email = request('email');
         
-        if(request('password')) $admin->password = bcrypt(request('password'));
+        if(request('password')) $admin->password = request('password');
         $admin->save();
 
         return redirect('super-admin/admin')->with('success', 'Data berhasil diubah');
