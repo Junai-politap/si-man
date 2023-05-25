@@ -25,7 +25,7 @@
 
                 <li class="nav-item">
                     <a href="{{ url('admin') }}" class="nav-link {{ checkRouteActive('admin') }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-home"></i>
                         <p>
                             Dashboard
 
@@ -44,7 +44,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ url('admin/data-cover') }}" class="nav-link {{ checkRouteActive('admin/data-cover') }}">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-file"></i>
                         <p>
                             Cover
 
@@ -62,7 +62,7 @@
                 </li>
                 <li class="nav-item ">
                     <a href="{{ url('admin/kelas') }}" class="nav-link {{ checkRouteActive('admin/kelas') }}">
-                        <i class="nav-icon fas fa-user"></i>
+                        <i class="nav-icon fas fa-university"></i>
                         <p>
                             Kelas
                         </p>
@@ -78,7 +78,7 @@
                 </li>
                 <li class="nav-item ">
                     <a href="{{ url('admin/nilai') }}" class="nav-link {{ checkRouteActive('admin/nilai') }}">
-                        <i class="nav-icon fa fa-pen-square"></i>
+                        <i class="nav-icon fa fa-edit"></i>
                         <p>
                             Nilai
                         </p>
