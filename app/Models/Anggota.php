@@ -8,7 +8,7 @@ use App\Models\Model;
 use App\Models\PesertaDidik;
 use App\Models\Kelas;
 
-class Admin extends ModelAuthenticate
+class Anggota extends Model
 {
    
     protected $table = 'anggota';

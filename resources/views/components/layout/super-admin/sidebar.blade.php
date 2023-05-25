@@ -26,7 +26,7 @@
                 <li class="nav-item">
                     <a href="{{ url('super-admin') }}"
                         class="nav-link {{ checkRouteActive('super-admin') }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-home"></i>
                         <p>
                             Dashboard
 
@@ -46,7 +46,7 @@
                 <li class="nav-item">
                     <a href="{{ url('super-admin/data-cover') }}"
                         class="nav-link {{ checkRouteActive('super-admin/data-cover') }}">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-file"></i>
                         <p>
                             Cover
 
@@ -66,7 +66,7 @@
                 <li class="nav-item ">
                     <a href="{{ url('super-admin/kelas') }}"
                         class="nav-link {{ checkRouteActive('super-admin/kelas') }}">
-                        <i class="nav-icon fas fa-user"></i>
+                        <i class="nav-icon fas fa-university"></i>
                         <p>
                             Kelas
                         </p>
@@ -84,7 +84,7 @@
                 <li class="nav-item ">
                     <a href="{{ url('super-admin/nilai') }}"
                         class="nav-link {{ checkRouteActive('super-admin/nilai') }}">
-                        <i class="nav-icon fa fa-pen-square"></i>
+                        <i class="nav-icon fa fa-edit"></i>
                         <p>
                             Nilai
                         </p>
