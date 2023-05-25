@@ -9,7 +9,7 @@
                         <strong> Tambah Data Peserta Didik</strong>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('ssuper-admin/peserta-didik') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('super-admin/peserta-didik') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
@@ -47,7 +47,7 @@
                                         <select class="custom-select custom-select-lg mb-3 form-control"
                                             name="jenis_kelamin" >
                                             <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Laki Laki">Laki Laki </option>
+                                            <option value="Laki-Laki">Laki Laki </option>
                                             <option value="Perempuan">Perempuan</option>
                                         </select>
                                     </div>
@@ -355,7 +355,7 @@
                                     <div class="form-grup">
                                         <select class="custom-select custom-select-lg mb-3 form-control" name="agama_ayah"
                                             >
-                                            <option selected> ------ Pilih Opsi ------ </option>
+                                            <option value=""> ------ Pilih Opsi ------ </option>
                                             <option value="Islam">Islam</option>
                                             <option value="Kristen">Kristen</option>
                                             <option value="Hindu">Hindu</option>

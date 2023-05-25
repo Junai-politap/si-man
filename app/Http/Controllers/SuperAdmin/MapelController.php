@@ -4,23 +4,27 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Mapel;
+use App\Models\Kelas;
 
 
 class MapelController extends Controller{
     function index(){
        
         $data['list_mapel'] = Mapel::all();
+        
         return view('super-admin.mapel.index', $data);
     }
 
     function create(){
        
-        return view('super-admin.mapel.create');
+        $data['list_kelas'] = Kelas::all();
+        return view('super-admin.mapel.create', $data);
         
     }
 
     function store(){
         $mapel = new Mapel;
+        $mapel->id_kelas = request('id_kelas');    
         $mapel->mapel = request('mapel');       
         $mapel->save();
 
@@ -37,13 +41,14 @@ class MapelController extends Controller{
 
  
     function edit(Mapel $mapel){
-       
+        $data['list_kelas'] = Kelas::all();
         $data['mapel'] = $mapel;
         return view('super-admin.mapel.edit', $data);
     }
 
     function update(Mapel $mapel){
-
+        
+        $mapel->id_kelas = request('id_kelas');
         $mapel->mapel= request('mapel');     
         $mapel->save();
 

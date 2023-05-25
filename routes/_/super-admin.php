@@ -30,7 +30,14 @@ Route::prefix('/')->middleware('auth:super-admin')->group(function () {
     Route::resource('mapel', MapelController::class);
     
     Route::resource('nilai', NilaiController::class);
-    
+    Route::get('nilai/{pesertadidik}/tambah_nilai10ganjil', [NilaiController::class, 'tambah_nilai10ganjil']);
+    Route::get('nilai/{pesertadidik}/tambah_nilai10genap', [NilaiController::class, 'tambah_nilai10genap']);
+    Route::get('nilai/{pesertadidik}/tambah_nilai11ganjil', [NilaiController::class, 'tambah_nilai11ganjil']);
+    Route::get('nilai/{pesertadidik}/tambah_nilai11genap', [NilaiController::class, 'tambah_nilai11genap']);
+    Route::get('nilai/{pesertadidik}/tambah_nilai12ganjil', [NilaiController::class, 'tambah_nilai12ganjil']);
+    Route::get('nilai/{pesertadidik}/tambah_nilai12genap', [NilaiController::class, 'tambah_nilai12genap']);
+
+
     Route::resource('register', RegisterController::class);
     Route::get('register/{register}/cetak_pdf', [RegisterController::class, 'cetak_pdf']);
     

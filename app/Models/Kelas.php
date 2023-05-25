@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Model;
 use App\Models\Anggota;
+use App\Models\Mapel;
 class Kelas extends Model
 {
     protected $table = 'kelas';
@@ -13,5 +14,8 @@ class Kelas extends Model
         return $this->belongsTo(Anggota::class, 'id');
     }
    
+    function Mapel(){
+        return $this->belongsTo(Mapel::class, 'id');
+    }
 
 }

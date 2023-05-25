@@ -46,11 +46,13 @@
                                 <div class="col-md-4">
                                     <label>Jenis Kelamin</label>
                                     <div class="form-grup">
-                                        <select class="custom-select custom-select-lg mb-3 form-control"
-                                            name="jenis_kelamin" value="{{$pesertadidik->jenis_kelamin}}">
-                                            <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Laki Laki">Laki Laki</option>
-                                            <option value="Perempuan">Perempuan</option>
+                                        <select name="jenis_kelamin" class="form-control">
+                                            <option value="Laki-Laki" @if ($pesertadidik->jenis_kelamin == 'Laki-Laki') selected @endif>Laki-Laki</option>
+        
+                                            <option value="Perempuan" @if ($pesertadidik->jenis_kelamin == 'Perempuan') selected @endif>Perempuan
+                                            </option>
+        
+        
                                         </select>
                                     </div>
                                 </div>
@@ -79,14 +81,22 @@
                                 <div class="col-md-4">
                                     <label>Agama</label>
                                     <div class="form-grup">
-                                        <select class="custom-select custom-select-lg mb-3 form-control" name="agama" value="{{$pesertadidik->agama}}">
-                                            <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Islam">Islam</option>
-                                            <option value="Kristen">Kristen</option>
-                                            <option value="Hindu">Hindu</option>
-                                            <option value="Budha">Budha</option>
-                                            <option value="Konghucu">Konghucu</option>
-
+                                        <select name="agama" class="form-control">
+                                            <option value="Islam" @if ($pesertadidik->agama == 'Islam') selected @endif>Islam</option>
+        
+                                            <option value="Kristen" @if ($pesertadidik->agama == 'Kristen') selected @endif>Kristen
+                                            </option>
+        
+                                            <option value="Khatolik" @if ($pesertadidik->agama == 'Khatolik') selected @endif>Khatolik
+                                            </option>
+        
+                                            <option value="Hindhu" @if ($pesertadidik->agama == 'Hindhu') selected @endif>Hindhu</option>
+        
+                                            <option value="Budha" @if ($pesertadidik->agama == 'Budha') selected @endif>Budha</option>
+        
+                                            <option value="Kong Hu Chu" @if ($pesertadidik->agama == 'Konghucu') selected @endif>Kong Hu
+                                                Chu</option>
+        
                                         </select>
                                     </div>
                                 </div>
@@ -354,14 +364,22 @@
                                 <div class="col-md-4">
                                     <label>Agama</label>
                                     <div class="form-grup">
-                                        <select class="custom-select custom-select-lg mb-3 form-control" name="agama_ayah" value="{{$pesertadidik->agama_ayah}}">
-                                            <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Islam">Islam</option>
-                                            <option value="Kristen">Kristen</option>
-                                            <option value="Hindu">Hindu</option>
-                                            <option value="Budha">Budha</option>
-                                            <option value="Konghucu">Konghucu</option>
-
+                                        <select name="agama_ayah" class="form-control">
+                                            <option value="Islam" @if ($pesertadidik->agama_ayah == 'Islam') selected @endif>Islam</option>
+        
+                                            <option value="Kristen" @if ($pesertadidik->agama_ayah == 'Kristen') selected @endif>Kristen
+                                            </option>
+        
+                                            <option value="Khatolik" @if ($pesertadidik->agama_ayah == 'Khatolik') selected @endif>Khatolik
+                                            </option>
+        
+                                            <option value="Hindhu" @if ($pesertadidik->agama_ayah == 'Hindhu') selected @endif>Hindhu</option>
+        
+                                            <option value="Budha" @if ($pesertadidik->agama_ayah == 'Budha') selected @endif>Budha</option>
+        
+                                            <option value="Konghucu" @if ($pesertadidik->agama_ayah == 'Konghucu') selected @endif>Kong Hu
+                                                Chu</option>
+        
                                         </select>
                                     </div>
                                 </div>      
@@ -370,14 +388,17 @@
                                 <div class="col-md-4">
                                     <label>Pendidikan Terakhir</label>
                                     <div class="form-grup">
-                                        <select class="custom-select custom-select-lg mb-3 form-control" name="pend_terakhir_ayah" value="{{$pesertadidik->pend_terakhir_ayah}}">
-                                            <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Tidak Sekolah">Tidak Sekolah</option>
-                                            <option value="SD/Sederajat">SD/Sederajat</option>
-                                            <option value="SMP/Sederajat">SMP/Sederajat</option>
-                                            <option value="SMA/Sederajat">SMA/Sederajat</option>
-                                            <option value="Sarjana">Sarjana</option>
-
+                                        <select name="pend_terakhir_ayah" class="form-control">
+                                            <option value="Tidak Sekolah" @if ($pesertadidik->pend_terakhir_ayah == 'Tidak Sekolah') selected @endif>Tidak Sekolah</option>
+        
+                                            <option value="SD/Sederajat" @if ($pesertadidik->pend_terakhir_ayah == 'SD/Sederajat') selected @endif>SD/Sederajat</option>
+        
+                                            <option value="SMP/Sederajat" @if ($pesertadidik->pend_terakhir_ayah == 'SMP/Sederajat') selected @endif>SMP/Sederajat</option>
+        
+                                            <option value="SMA/Sederajat" @if ($pesertadidik->pend_terakhir_ayah == 'SMA/Sederajat') selected @endif>SMA/Sederajat</option>
+        
+                                            <option value="Sarjana" @if ($pesertadidik->pend_terakhir_ayah == 'Sarjana') selected @endif>Sarjana</option>
+        
                                         </select>
                                     </div>
                                 </div>      
@@ -483,14 +504,21 @@
                                 <div class="col-md-4">
                                     <label>Agama</label>
                                     <div class="form-grup">
-                                        <select class="custom-select custom-select-lg mb-3 form-control" name="agama_ibu" value="{{$pesertadidik->agama_ibu}}">
-                                            <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Islam">Islam</option>
-                                            <option value="Kristen">Kristen</option>
-                                            <option value="Hindu">Hindu</option>
-                                            <option value="Budha">Budha</option>
-                                            <option value="Konghucu">Konghucu</option>
-
+                                        <select name="agama_ibu" class="form-control">
+                                            <option value="Islam" @if ($pesertadidik->agama_ibu == 'Islam') selected @endif>Islam</option>
+        
+                                            <option value="Kristen" @if ($pesertadidik->agama_ibu == 'Kristen') selected @endif>Kristen
+                                            </option>
+        
+                                            <option value="Khatolik" @if ($pesertadidik->agama_ibu == 'Khatolik') selected @endif>Khatolik
+                                            </option>
+        
+                                            <option value="Hindhu" @if ($pesertadidik->agama_ibu == 'Hindhu') selected @endif>Hindhu</option>
+        
+                                            <option value="Budha" @if ($pesertadidik->agama_ibu == 'Budha') selected @endif>Budha</option>
+        
+                                            <option value="Konghucu" @if ($pesertadidik->agama_ibu == 'Konghucu') selected @endif>Kong Hu</option>
+        
                                         </select>
                                     </div>
                                 </div>      
@@ -499,16 +527,19 @@
                                 <div class="col-md-4">
                                     <label>Pendidikan Terakhir</label>
                                     <div class="form-grup">
-                                        <select class="custom-select custom-select-lg mb-3 form-control" name="pend_terakhir_ibu" value="{{$pesertadidik->pend_terakhir_ibu}}"
-                                            >
-                                            <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Tidak Sekolah">Tidak Sekolah</option>
-                                            <option value="SD/Sederajat">SD/Sederajat</option>
-                                            <option value="SMP/Sederajat">SMP/Sederajat</option>
-                                            <option value="SMA/Sederajat">SMA/Sederajat</option>
-                                            <option value="Sarjana">Sarjana</option>
-
+                                        <select name="pend_terakhir_ibu" class="form-control">
+                                            <option value="Tidak Sekolah" @if ($pesertadidik->pend_terakhir_ibu == 'Tidak Sekolah') selected @endif>Tidak Sekolah</option>
+        
+                                            <option value="SD/Sederajat" @if ($pesertadidik->pend_terakhir_ibu == 'SD/Sederajat') selected @endif>SD/Sederajat</option>
+        
+                                            <option value="SMP/Sederajat" @if ($pesertadidik->pend_terakhir_ibu == 'SMP/Sederajat') selected @endif>SMP/Sederajat</option>
+        
+                                            <option value="SMA/Sederajat" @if ($pesertadidik->pend_terakhir_ibu == 'SMA/Sederajat') selected @endif>SMA/Sederajat</option>
+        
+                                            <option value="Sarjana" @if ($pesertadidik->pend_terakhir_ibu == 'Sarjana') selected @endif>Sarjana</option>
+        
                                         </select>
+                                    </div>
                                     </div>
                                 </div>      
                                 <div class="col-md-4">
@@ -613,15 +644,22 @@
                                 <div class="col-md-4">
                                     <label>Agama</label>
                                     <div class="form-grup">
-                                        <select class="custom-select custom-select-lg mb-3 form-control" name="agama_wali" value="{{$pesertadidik->agama_wali}}"
-                                            >
-                                            <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Islam">Islam</option>
-                                            <option value="Kristen">Kristen</option>
-                                            <option value="Hindu">Hindu</option>
-                                            <option value="Budha">Budha</option>
-                                            <option value="Konghucu">Konghucu</option>
-
+                                        <select name="agama_wali" class="form-control">
+                                            <option value="Islam" @if ($pesertadidik->agama_wali == 'Islam') selected @endif>Islam</option>
+        
+                                            <option value="Kristen" @if ($pesertadidik->agama_wali == 'Kristen') selected @endif>Kristen
+                                            </option>
+        
+                                            <option value="Khatolik" @if ($pesertadidik->agama_wali == 'Khatolik') selected @endif>Khatolik
+                                            </option>
+        
+                                            <option value="Hindhu" @if ($pesertadidik->agama_wali == 'Hindhu') selected @endif>Hindhu</option>
+        
+                                            <option value="Budha" @if ($pesertadidik->agama_wali == 'Budha') selected @endif>Budha</option>
+        
+                                            <option value="Konghucu" @if ($pesertadidik->agama_wali == 'Konghucu') selected @endif>Kong Hu
+                                                Chu</option>
+        
                                         </select>
                                     </div>
                                 </div>      
@@ -630,16 +668,19 @@
                                 <div class="col-md-4">
                                     <label>Pendidikan Terakhir</label>
                                     <div class="form-grup">
-                                        <select class="custom-select custom-select-lg mb-3 form-control" name="pend_terakhir_wali" value="{{$pesertadidik->pend_terakhir_wali}}"
-                                            >
-                                            <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Tidak Sekolah">Tidak Sekolah</option>
-                                            <option value="SD/Sederajat">SD/Sederajat</option>
-                                            <option value="SMP/Sederajat">SMP/Sederajat</option>
-                                            <option value="SMA/Sederajat">SMA/Sederajat</option>
-                                            <option value="Sarjana">Sarjana</option>
-
+                                        <select name="pend_terakhir_wali" class="form-control">
+                                            <option value="Tidak Sekolah" @if ($pesertadidik->pend_terakhir_wali == 'Tidak Sekolah') selected @endif>Tidak Sekolah</option>
+        
+                                            <option value="SD/Sederajat" @if ($pesertadidik->pend_terakhir_wali == 'SD/Sederajat') selected @endif>SD/Sederajat</option>
+        
+                                            <option value="SMP/Sederajat" @if ($pesertadidik->pend_terakhir_wali == 'SMP/Sederajat') selected @endif>SMP/Sederajat</option>
+        
+                                            <option value="SMA/Sederajat" @if ($pesertadidik->pend_terakhir_wali == 'SMA/Sederajat') selected @endif>SMA/Sederajat</option>
+        
+                                            <option value="Sarjana" @if ($pesertadidik->pend_terakhir_wali == 'Sarjana') selected @endif>Sarjana</option>
+        
                                         </select>
+                                    </div>
                                     </div>
                                 </div>      
                                 <div class="col-md-4">

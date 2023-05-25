@@ -30,9 +30,7 @@
                                         <td class="text-center">{{$loop->iteration}}</td>
                                         <td class="text-center">
                                             <div class="btn-group">
-                                                <x-button.info-button url="super-admin/kelas"
-                                                    id="{{ $kelas->id }}" />
-
+                                               
                                                 <x-button.edit-button url="super-admin/kelas"
                                                     id="{{ $kelas->id }}" />
 
