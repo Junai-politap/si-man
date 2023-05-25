@@ -89,9 +89,9 @@ class DataCoverController extends Controller
         return redirect('super-admin/data-cover');
     }
 
-    public function cetak_pdf(DataCover $datacover)
+    public function cetak_pdf($datacover)
     {
-        $data ['datacover'] = $datacover;
+        $data ['datacover'] = DataCover::find($datacover);
         return view('super-admin.datacover.cetak_pdf', $data);
     }
 }
