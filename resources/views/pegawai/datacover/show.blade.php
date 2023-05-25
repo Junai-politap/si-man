@@ -1,11 +1,9 @@
-@extends('pegawai.base')
-@section('content')
+<x-pegawai>
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href="{{ url('pegawai/datacover') }}" class="btn btn-dark "><i class="fas fa-arrow-left">
-                    </i> Kembali</a>
+                <x-button.back-button url="pegawai/data-cover" />
                 <div class="card mt-3">
                     <div class="card-header">
                         <div class="card-title">
@@ -131,4 +129,6 @@
             </div>
         </div>
     </div>
-@endsection
+
+
+</x-pegawai>

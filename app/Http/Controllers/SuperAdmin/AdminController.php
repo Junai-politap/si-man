@@ -61,9 +61,9 @@ class AdminController extends Controller
         return redirect('super-admin/admin')->with('success', 'Data berhasil diubah');
     }
 
-    public function destroy(Admin $admin)
+    public function destroy($admin)
     {
-        $admin->delete();
+        Admin::destroy($admin);
 
         return redirect('super-admin/admin');
     }

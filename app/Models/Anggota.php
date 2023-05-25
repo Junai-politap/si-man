@@ -8,15 +8,11 @@ use App\Models\Model;
 use App\Models\PesertaDidik;
 use App\Models\Kelas;
 
-
+class Admin extends ModelAuthenticate
+{
    
     protected $table = 'anggota';
 
-
-
-   
-
-    protected $fillable =['id_peserta_didik'];
 
     function PesertaDidik(){
         return $this->belongsTo(PesertaDidik::class, 'id_peserta_didik');

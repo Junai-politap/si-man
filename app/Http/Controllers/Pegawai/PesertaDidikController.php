@@ -253,19 +253,14 @@ class PesertaDidikController extends Controller{
         $pesertadidik->kelas_sekarang = request('kelas_sekarang');       
         $pesertadidik->save();
 
-        
-
-        
-
         return redirect('pegawai/peserta-didik')->with('success', 'Data Berhasil Diedit');
     
         
     }
 
-    function destroy(PesertaDidik $pesertadidik){
+    function destroy( $pesertadidik){
        
-        $pesertadidik->handleDelete();
-        $pesertadidik->delete($pesertadidik);
+        PesertaDidik::destroy($pesertadidik);
 
         return redirect('pegawai/peserta-didik')->with('danger', 'Data Berhasil Dihapus');
      

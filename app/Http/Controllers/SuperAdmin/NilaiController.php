@@ -59,10 +59,9 @@ class NilaiController extends Controller{
         
     }
 
-    function destroy(Nilai $nilai){
+    function destroy($nilai){
        
-        $nilai->handleDelete();
-        $nilai->delete($nilai);
+        Nilai::destroy($nilai);
 
         return redirect('super-admin/nilai')->with('danger', 'Data Berhasil Dihapus');
      

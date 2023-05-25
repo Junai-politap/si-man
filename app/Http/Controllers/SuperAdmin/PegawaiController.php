@@ -60,9 +60,9 @@ class PegawaiController extends Controller
     }
 
     
-    public function destroy(Pegawai $pegawai)
+    public function destroy($pegawai)
     {
-        $pegawai->delete();
+        Pegawai::destroy($pegawai);
 
         return redirect('super-admin/pegawai');
     }

@@ -82,10 +82,9 @@ class DataCoverController extends Controller
     }
 
     
-    public function destroy(DataCover $datacover)
+    public function destroy($datacover)
     {
-        $datacover->handleDelete();
-        $datacover->delete();
+        DataCover::destroy($datacover);
 
         return redirect('super-admin/data-cover');
     }

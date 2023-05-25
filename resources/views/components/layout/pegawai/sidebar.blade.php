@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('pegawai/datacover') }}"
+                    <a href="{{ url('pegawai/data-cover') }}"
                         class="nav-link {{ checkRouteActive('pegawai/data-cover') }}">
                         <i class="nav-icon fas fa-file"></i>
                         <p>

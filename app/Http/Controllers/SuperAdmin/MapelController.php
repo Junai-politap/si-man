@@ -50,10 +50,9 @@ class MapelController extends Controller{
         return redirect('super-admin/mapel')->with('success', 'Data Berhasil Diedit');
     }
 
-    function destroy(Mapel $mapel){
+    function destroy($mapel){
        
-        $mapel->handleDelete();
-        $mapel->delete($mapel);
+        Mapel::destroy($mapel);
 
         return redirect('super-admin/mapel')->with('danger', 'Data Berhasil Dihapus');
      

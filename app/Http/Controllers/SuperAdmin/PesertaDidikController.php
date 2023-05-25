@@ -257,10 +257,9 @@ class PesertaDidikController extends Controller{
 
     }
 
-    function destroy(PesertaDidik $pesertadidik){
+    function destroy($pesertadidik){
        
-        $pesertadidik->handleDelete();
-        $pesertadidik->delete($pesertadidik);
+        PesertaDidik::destroy($pesertadidik);
 
         return redirect('super-admin/peserta-didik')->with('danger', 'Data Berhasil Dihapus');
      
