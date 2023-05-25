@@ -45,12 +45,7 @@ class DataCoverController extends Controller
         return redirect('admin/datacover')->with('success', 'Data berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($datacover)
     {
      
@@ -58,12 +53,7 @@ class DataCoverController extends Controller
         return view('admin.datacover.show', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($datacover)
     {
        
@@ -71,13 +61,7 @@ class DataCoverController extends Controller
         return view('admin.datacover.edit', $data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(DataCover $datacover)
     {
         $datacover->nama_sekolah = request('nama_sekolah');
@@ -98,16 +82,10 @@ class DataCoverController extends Controller
         return redirect('admin/datacover')->with('success', 'Data berhasil diubah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(DataCover $datacover)
+    public function destroy($datacover)
     {
         $datacover->handleDelete();
-        $datacover->delete();
+        DataCover::destroy($datacover);
 
         return redirect('admin/datacover');
     }

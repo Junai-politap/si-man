@@ -56,19 +56,14 @@ class NilaiController extends Controller{
         $nilai->keterampilan = request('keterampilan');     
         $nilai->save();
 
-        
-
-        
-
         return redirect('admin/nilai')->with('success', 'Data Berhasil Diedit');
     
         
     }
 
-    function destroy(Nilai $nilai){
+    function destroy($nilai){
        
-        $nilai->handleDelete();
-        $nilai->delete($nilai);
+        Nilai::destroy($nilai);
 
         return redirect('admin/nilai')->with('danger', 'Data Berhasil Dihapus');
      

@@ -57,9 +57,9 @@ class KelasController extends Controller{
         
     }
 
-    function destroy(Kelas $kelas){
+    function destroy( $kelas){
        
-        $kelas->delete($kelas);
+        Kelas::destroy($kelas);
 
         return redirect('pegawai/kelas')->with('danger', 'Data Berhasil Dihapus');
      

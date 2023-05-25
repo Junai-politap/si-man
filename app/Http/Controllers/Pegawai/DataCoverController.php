@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 
 class DataCoverController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
        
@@ -19,23 +15,14 @@ class DataCoverController extends Controller
         return view('pegawai.datacover.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
        
         return view('pegawai.datacover.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store()
     {
         $datacover = new DataCover;
@@ -55,28 +42,18 @@ class DataCoverController extends Controller
 
         $datacover->handleUploadFoto();
 
-        return redirect('pegawai/datacover')->with('success', 'Data berhasil ditambahkan');
+        return redirect('pegawai/data-cover')->with('success', 'Data berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(DataCover $datacover)
+    
+    public function show($datacover)
     {
      
-        $data ['datacover'] = $datacover;
+        $data ['datacover'] = DataCover::find($datacover);
         return view('pegawai.datacover.show', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(DataCover $datacover)
     {
        
@@ -84,13 +61,7 @@ class DataCoverController extends Controller
         return view('pegawai.datacover.edit', $data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(DataCover $datacover)
     {
         $datacover->nama_sekolah = request('nama_sekolah');
@@ -108,21 +79,16 @@ class DataCoverController extends Controller
         $datacover->save();
         
 
-        return redirect('pegawai/datacover')->with('success', 'Data berhasil diubah');
+        return redirect('pegawai/data-cover')->with('success', 'Data berhasil diubah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(DataCover $datacover)
+    
+    public function destroy( $datacover)
     {
         $datacover->handleDelete();
-        $datacover->delete();
+        DataCover::destroy($datacover);
 
-        return redirect('pegawai/datacover');
+        return redirect('pegawai/data-cover');
     }
 
     public function cetak_pdf(DataCover $datacover)

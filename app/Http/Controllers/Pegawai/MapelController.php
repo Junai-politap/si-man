@@ -49,17 +49,12 @@ class MapelController extends Controller{
         $mapel->mapel= request('mapel');     
         $mapel->save();
 
-        
-
-        
-
         return redirect('pegawai/mapel')->with('success', 'Data Berhasil Diedit');
     }
 
-    function destroy(Mapel $mapel){
+    function destroy( $mapel){
        
-        $mapel->handleDelete();
-        $mapel->delete($mapel);
+        Mapel::destroy($mapel);
 
         return redirect('pegawai/mapel')->with('danger', 'Data Berhasil Dihapus');
      

@@ -2,8 +2,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Anggota;
 use Illuminate\Http\Request;
+use App\Models\Anggota;
 use App\Models\Kelas;
 use App\Models\PesertaDidik;
 
