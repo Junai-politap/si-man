@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kelas;
 use Illuminate\Http\Request;
 use App\Models\Nilai;
+use App\Models\Mapel;
 use App\Models\PesertaDidik;
 
 
@@ -65,6 +66,48 @@ class NilaiController extends Controller{
 
         return redirect('super-admin/nilai')->with('danger', 'Data Berhasil Dihapus');
      
+    }
+
+    public function tambah_nilai10ganjil(Nilai $nilai)
+    {
+        $data['list_mapel'] = Mapel::all();
+        $data ['nilai'] = $nilai;
+        return view('super-admin.nilai.tambah_nilai10ganjil', $data);
+    }
+
+    public function tambah_nilai10genap(Nilai $nilai)
+    {   
+        $data['list_mapel'] = Mapel::all();
+        $data ['nilai'] = $nilai;
+        return view('super-admin.nilai.tambah_nilai10genap', $data);
+    }
+
+    public function tambah_nilai11ganjil(Nilai $nilai)
+    {   
+        $data['list_mapel'] = Mapel::all();
+        $data ['nilai'] = $nilai;
+        return view('super-admin.nilai.tambah_nilai11ganjil', $data);
+    }
+
+    public function tambah_nilai11genap(Nilai $nilai)
+    {   
+        $data['list_mapel'] = Mapel::all();
+        $data ['nilai'] = $nilai;
+        return view('super-admin.nilai.tambah_nilai11genap', $data);
+    }
+
+    public function tambah_nilai12ganjil(Nilai $nilai)
+    {   
+        $data['list_mapel'] = Mapel::all();
+        $data ['nilai'] = $nilai;
+        return view('super-admin.nilai.tambah_nilai12ganjil', $data);
+    }
+
+    public function tambah_nilai12genap(Nilai $nilai)
+    {   
+        $data['list_mapel'] = Mapel::all();
+        $data ['nilai'] = $nilai;
+        return view('super-admin.nilai.tambah_nilai12genap', $data);
     }
 
     

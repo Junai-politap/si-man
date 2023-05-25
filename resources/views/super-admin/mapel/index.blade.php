@@ -19,6 +19,8 @@
                                 <th class="text-center">No</th>
                                 <th class="text-center">Aksi</th>
                                 <th class="text-center">Mata Pelajaran</th>
+                                <th class="text-center">Kelas</th>
+                                <th class="text-center">Semester</th>
                                
                             </thead>
                             <tbody>
@@ -40,7 +42,8 @@
                                             </div>
                                         </td>
                                         <td class="text-center">{{$mapel->mapel}}</td>
-                                        
+                                        <td class="text-center">{{$mapel->kelas->kelas}}</td>
+                                        <td class="text-center">{{$mapel->kelas->semester}}</td>
                                        
                                     </tr>                                    
                                 @endforeach
