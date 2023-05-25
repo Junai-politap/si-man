@@ -1,118 +1,72 @@
- 
-<!doctype html>
-<html lang="en">
+<x-app>
+    <style>
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
 
+        .subpage {
+            padding: 1cm;
+            border: 5px red solid;
+            height: 257mm;
+            outline: 2cm #FFEAEA solid;
+        }
 
+        @page {
+            size: A4;
+            margin: 0;
+        }
 
+        @media print {
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-   
-</head>
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
 
-<body>
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+    </style>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-<div class="text-center">
-        <img src="https://www.freepnglogos.com/uploads/tut-wuri-handayani-png-logo/vector-wuri-handayani-warna-0.png"
-            class="rounded" width="250px">
-</div>
-
-<BR></BR>
-<BR></BR>
-
-        <div class="text-center">
-                <h1>BUKU INDUK PESERTA DIDIK</h1>
-                <h2>SEKOLAH MENENGAH ATAS</h2>
-                <h1>( SMA )</h1>
+<div class="container-fluid mt-2">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="book">
+                <div class="page">
+                    <div class="subpage">
+                      <p>Page 1/1</p>
+                      
+                            Masukan properti dkatanya disini
+                    </div>    
+                </div>
+             
+                <div class="page">
+                    <div class="subpage">Page 2/2</div>    
+                </div>
+            
+            </div>
         </div>
-        
-<BR>
-    <div class="text-center">
-        <H3>KURIKULUM TINGKAT SATUAN PENDIDIKAN</H3>
-        <H3><B>KURIKULUM 13</B></H3>
-        <H4><B>TAHUN PELAJARAN {{ $datacover->tahun_pelajaran }}</B></H4>
     </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<table class="table table-borderless" style="margin-left:300px">
-    <tbody >
-        <tr >
-            <td width="160px">NAMA SEKOLAH</td>
-            <td width="40px">:</td>
-            <td >{{$datacover->nama_sekolah}}</td>
-        </tr>
-        <tr>
-            <td>NSS/NPSN</td>
-            <td>:</td>
-            <td>{{$datacover->nss_npsn}}</td>
-        </tr>
-        <tr>
-            <td>ALAMAT SEKOLAH</td>
-            <td>:</td>
-            <td>{{$datacover->alamat_sekolah}}</td>
-        </tr>
-        <tr>
-            <td>DESA/KELURAHAN</td>
-            <td>:</td>
-            <td>{{$datacover->desa_kelurahan}}</td>
-        </tr>
-        <tr>
-            <td>KECAMATAN</td>
-            <td>:</td>
-            <td>{{$datacover->kecamatan}}</td>
-        </tr>
-        <tr>
-            <td>KABUPATEN/KOTA</td>
-            <td>:</td>
-            <td>{{$datacover->kabupaten}}</td>
-        </tr>
-        <tr>
-            <td>PROVINSI</td>
-            <td>:</td>
-            <td>{{$datacover->provinsi}}</td>
-        </tr>
-        <script type="text/javascript">
-            window.print();
-        </script>
-    </tbody>
-</table>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-</body>
-
-</html>
+</div>
+</x-app>
