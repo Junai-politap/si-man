@@ -9,7 +9,7 @@ class Mapel extends Model
     
     protected $table = "mapel";
 
-    function Nilai(){
+    function Nilai_10(){
         return $this->belongsTo(Nilai::class, 'id');
     }
 

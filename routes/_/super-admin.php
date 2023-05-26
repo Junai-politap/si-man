@@ -9,7 +9,7 @@ use App\Http\Controllers\Superadmin\DataCoverController;
 use App\Http\Controllers\Superadmin\KelasController;
 use App\Http\Controllers\Superadmin\MapelController;
 use App\Http\Controllers\Superadmin\RegisterController;
-use App\Http\Controllers\Superadmin\NilaiController;
+use App\Http\Controllers\Superadmin\NilaiKelas10GanjilController;
 
 Route::prefix('/')->middleware('auth:super-admin')->group(function () {
 
@@ -29,14 +29,22 @@ Route::prefix('/')->middleware('auth:super-admin')->group(function () {
     
     Route::resource('mapel', MapelController::class);
     
-    Route::resource('nilai', NilaiController::class);
-    Route::get('nilai/{pesertadidik}/tambah_nilai10ganjil', [NilaiController::class, 'tambah_nilai10ganjil']);
-    Route::get('nilai/{pesertadidik}/tambah_nilai10genap', [NilaiController::class, 'tambah_nilai10genap']);
-    Route::get('nilai/{pesertadidik}/tambah_nilai11ganjil', [NilaiController::class, 'tambah_nilai11ganjil']);
-    Route::get('nilai/{pesertadidik}/tambah_nilai11genap', [NilaiController::class, 'tambah_nilai11genap']);
-    Route::get('nilai/{pesertadidik}/tambah_nilai12ganjil', [NilaiController::class, 'tambah_nilai12ganjil']);
-    Route::get('nilai/{pesertadidik}/tambah_nilai12genap', [NilaiController::class, 'tambah_nilai12genap']);
+    Route::resource('nilai', NilaiKelas10GanjilController::class);  
+    Route::get('nilai/{pesertadidik}/tambah-nilai-10-ganjil', [NilaiKelas10GanjilController::class, 'tambah_nilai10ganjil']);
+    Route::post('nilai', [NilaiKelas10GanjilController::class, 'store']);
+    Route::put('nilai/{pesertadidik}/tambah-nilai-10-ganjil', [NilaiKelas10GanjilController::class, 'update']);
 
+
+
+
+    Route::get('nilai/{pesertadidik}/tambah-nilai-10-genap', [NilaiController::class, 'tambah-nilai-10-genap']);
+    Route::get('nilai/{pesertadidik}/tambah-nilai-11-ganjil', [NilaiController::class, 'tambah-nilai-11-ganjil']);
+    Route::get('nilai/{pesertadidik}/tambah-nilai-11-genap', [NilaiController::class, 'tambah-nilai-11-genap']);
+    Route::get('nilai/{pesertadidik}/tambah-nilai-12-ganjil', [NilaiController::class, 'tambah-nilai-12-ganjil']);
+    Route::get('nilai/{pesertadidik}/tambah-nilai-12-genap', [NilaiController::class, 'tambah-nilai-12-genap']);
+
+
+    
 
     Route::resource('register', RegisterController::class);
     Route::get('register/{register}/cetak_pdf', [RegisterController::class, 'cetak_pdf']);
