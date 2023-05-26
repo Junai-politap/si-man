@@ -31,8 +31,9 @@
                                         <td class="text-center">{{$loop->iteration}}</td>
                                         <td class="text-center">
                                             <div class="btn-group">
-                                                <x-button.info-button url="super-admin/nilai"
-                                                    id="{{ $pesertadidik->id }}" />
+                                                <a href="{{ url("super-admin/nilai/$pesertadidik->id") }}" class="btn btn-primary"><span class="fa fa-plus"></span> Tambah Nilai</a>
+
+                                               <a href="{{ url("super-admin/nilai/$pesertadidik->id") }}/detail" class="btn btn-info"><span class="fa fa-info"></span> Lihat</a>
 
                                                 <x-button.edit-button url="super-admin/nilai"
                                                     id="{{ $pesertadidik->id }}" />

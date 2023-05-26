@@ -4,13 +4,15 @@ namespace App\Models;
 use App\Models\Model;
 use App\Models\Nilai;
 use App\Models\Kelas;
+use App\Models\Nilai10Ganjil;
+
 class Mapel extends Model
 {
     
     protected $table = "mapel";
 
-    function Nilai_10(){
-        return $this->belongsTo(Nilai::class, 'id');
+    function Nilai10Ganjil(){
+        return $this->belongsTo(Nilai10Ganjil::class, 'id');
     }
 
     

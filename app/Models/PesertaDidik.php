@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\Model;
-use App\Models\Nilai;
+use App\Models\Nilai10Ganjil;
 use App\Models\Anggota;
 
 class PesertaDidik extends Model
@@ -13,6 +13,10 @@ class PesertaDidik extends Model
 
     function Nilai(){
         return $this->belongsTo(Nilai::class, 'id');
+    }
+
+    function Nilai10Ganjil(){
+        return $this->belongsTo(Nilai10Ganjil::class, 'id');
     }
 
     
