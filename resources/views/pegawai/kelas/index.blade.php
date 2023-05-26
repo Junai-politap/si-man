@@ -19,7 +19,6 @@
                             <table id="example2" class="table table-bordered table-striped">
                                 <thead class="thead-default">
                                     <th class="text-center">No</th>
-                                    <th class="text-center">Aksi</th>
                                     <th class="text-center">Kelas</th>
                                     <th class="text-center">Semester</th>
 
@@ -28,16 +27,7 @@
                                     @foreach ($list_kelas as $kelas)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td class="text-center">
-                                                <div class="btn-group">
-                                                    <x-button.info-button url="pegawai/kelas" id="{{ $kelas->id }}" />
-
-                                                    <x-button.edit-button url="pegawai/kelas" id="{{ $kelas->id }}" />
-
-                                                    <x-button.delete-button url="pegawai/kelas"
-                                                        id="{{ $kelas->id }}" />
-                                                </div>
-                                            </td>
+                                           
                                             <td class="text-center">{{ $kelas->kelas }}</td>
                                             <td class="text-center">{{ $kelas->semester }}</td>
 

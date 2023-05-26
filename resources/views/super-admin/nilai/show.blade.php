@@ -13,14 +13,9 @@
             </div>
             <br>
             <div class="row mb-10">
-
                 <div class="col-md-12">
-
-
                     <div class="container-fluid">
-
                         <div class="row">
-
                             <div class="col-md-4">
 
                                 <div class="small-box bg-info">
@@ -72,16 +67,12 @@
                                         <i class="fa fa-plus"></i></a>
                                 </div>
                             </div>
-
                         </div>
                         <div class="row">
-
                             <div class="col-md-4">
-
                                 <div class="small-box bg-info">
                                     <div class="inner">
                                         <h3>Kelas XI</h3>
-
                                         <p>Genap</p>
                                     </div>
                                     <div class="icon">
@@ -127,14 +118,13 @@
                                         <i class="fa fa-plus"></i></a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     
+
 
 </x-app>

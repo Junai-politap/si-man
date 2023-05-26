@@ -15,6 +15,20 @@
             <h6>SIBI | MAN 2 KETAPANG</h6>
         </span>
     </a>
+    <a class="brand-link ">
+        <span class="brand-text font-weight-light text-center">
+            <div class="admin-info">
+                <div class="admin-info">
+                    <div class="font-strong">
+                         ADMIN                  
+                    </div>
+                </div>
+            </div>
+        </span>
+    </a>
+
+   
+    
 
     <div class="sidebar">
 
