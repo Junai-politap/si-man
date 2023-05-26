@@ -28,7 +28,7 @@
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
 
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah_nilai10ganjil"
+                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-10-ganjil"
                                         class="small-box-footer btn btn-info">Tambah Nilai
                                         <i class="fa fa-plus"></i></a>
                                 </div>
@@ -45,7 +45,7 @@
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
 
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah_nilai10genap"
+                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-10-genap"
                                         class="small-box-footer btn btn-info">Tambah Nilai
                                         <i class="fa fa-plus"></i></a>
                                 </div>
@@ -62,7 +62,7 @@
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
 
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah_nilai11ganjil"
+                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-11-ganjil"
                                         class="small-box-footer btn btn-info">Tambah Nilai
                                         <i class="fa fa-plus"></i></a>
                                 </div>
@@ -79,7 +79,7 @@
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
 
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah_nilai11genap"
+                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-11-genap"
                                         class="small-box-footer btn btn-info">Tambah Nilai
                                         <i class="fa fa-plus"></i></a>
                                 </div>
@@ -96,7 +96,7 @@
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
 
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah_nilai12ganjil"
+                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-12-ganjil"
                                         class="small-box-footer btn btn-info">Tambah Nilai
                                         <i class="fa fa-plus"></i></a>
                                 </div>
@@ -113,7 +113,7 @@
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
 
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah_nilai1Qgenap"
+                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-12-genap"
                                         class="small-box-footer btn btn-info">Tambah Nilai
                                         <i class="fa fa-plus"></i></a>
                                 </div>

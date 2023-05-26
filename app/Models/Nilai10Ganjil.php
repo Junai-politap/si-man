@@ -6,9 +6,9 @@ use App\Models\Model;
 use App\Models\Mapel;
 use App\Models\PesertaDidik;
 
-class Nilai extends Model
+class Nilai10Ganjil extends Model
 {
-    protected $table = 'nilai';
+    protected $table = 'nilai_kelas10ganjil';
 
    
     function Mapel(){
