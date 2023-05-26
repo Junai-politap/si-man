@@ -31,7 +31,7 @@ Route::prefix('/')->middleware('auth:super-admin')->group(function () {
     
     Route::resource('nilai', NilaiKelas10GanjilController::class);  
     Route::get('nilai/{pesertadidik}/tambah-nilai-10-ganjil', [NilaiKelas10GanjilController::class, 'tambah_nilai10ganjil']);
-    Route::post('storeNilai10Ganjil', [NilaiKelas10GanjilController::class, 'tambah_nilai10ganjil']);
+    Route::post('nilai', [NilaiKelas10GanjilController::class, 'store']);
     Route::put('nilai/{pesertadidik}/tambah-nilai-10-ganjil', [NilaiKelas10GanjilController::class, 'update']);
 
 
