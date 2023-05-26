@@ -1,7 +1,7 @@
 <x-admin>
 
     <div class="container">
-        <div class="row" style="margin-top: 1%">
+        <div class="row">
             <div class="col-md-12">
                 <x-button.back-button url="admin/peserta-didik" />
                 <div class="card mt-2">
@@ -47,7 +47,7 @@
                                         <select class="custom-select custom-select-lg mb-3 form-control"
                                             name="jenis_kelamin" >
                                             <option selected> ------ Pilih Opsi ------ </option>
-                                            <option value="Laki Laki">Laki Laki </option>
+                                            <option value="Laki-Laki">Laki Laki </option>
                                             <option value="Perempuan">Perempuan</option>
                                         </select>
                                     </div>
@@ -355,7 +355,7 @@
                                     <div class="form-grup">
                                         <select class="custom-select custom-select-lg mb-3 form-control" name="agama_ayah"
                                             >
-                                            <option selected> ------ Pilih Opsi ------ </option>
+                                            <option value=""> ------ Pilih Opsi ------ </option>
                                             <option value="Islam">Islam</option>
                                             <option value="Kristen">Kristen</option>
                                             <option value="Hindu">Hindu</option>
@@ -866,7 +866,7 @@
                                     <strong>KELAS SEKARANG</strong>
                             </div>
                             <br>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-grup">
                                     <label for=""></label>
                                     <input type="text" class="form-control" name="kelas_sekarang" >

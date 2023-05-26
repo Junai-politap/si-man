@@ -3,42 +3,48 @@
     <div class="container-fluid mt-3">
         <div class="card">
             <div class="content">
+                <x-button.back-button url="super-admin/nilai"/>
+
+                
                 <div class="card-body">
+                
                         <div class="mt-4 d-flex justify-content-center">
                             <span >
                                 <h4>TAMBAH NILAI MAN 2 KETAPANG</h4>
                             </span>
                         </div>
-                
+                        
+                 <form action="{{url('super-admin/nilai')}}" method="post">
+                    @csrf
                        
 
-                        <table class="table table-borderless table-sm">
+                        <table class="table table-bordered table-striped table-sm">
                             <tbody>
 
                                 <tr>
 
                                     <td width="400px">NAMA PESERTA DIDIK</td>
-                                    <td>:</td>
+                                   
                                     <td>ALVIA</td>
 
                                 </tr>
                                 <tr>
                                     <td>NIS/NISN</td>
-                                    <td>:</td>
+                                   
                                     <td>3042022006</td>
 
                                 </tr>
                                 <tr>
 
                                     <td>KELAS</td>
-                                    <td>:</td>
+                                   
                                     <td>TI A</td>
 
                                 </tr>
                                 <tr>
 
                                     <td>SEMESTER</td>
-                                    <td>:</td>
+                                   
                                     <td>GENAP</td>
 
                                 </tr>
@@ -48,7 +54,7 @@
 
                         </table>
                         <br>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-striped">
 
 
                             <tbody>
@@ -137,7 +143,7 @@
                         </table>
                         <br>
 
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-striped">
                             <tbody>
                                 <tr>
                                     <th colspan="2" class="text-center" width="100px">KEGIATAN EKSTRAKURIKULER</th>
@@ -177,7 +183,8 @@
                             </tbody>
                         </table>
                         <br>
-                        <table class="table table-bordered">
+                        <table id="example1" class="table table-bordered table-striped">
+
                             <tbody>
                                 <tr>
                                     <th colspan="2" class="text-center" width="100px">KETIDAKHADIRAN</th>
@@ -216,8 +223,13 @@
                                
                             </tbody>
                         </table>
- 
-                 </div>                
+                        <button class="btn btn-success float-right"><i class="fa fa-save"></i> Simpan</button>
+
+                 </form>
+               
+                 </div>  
+             
+                       
             </div>
         </div>
     </div>

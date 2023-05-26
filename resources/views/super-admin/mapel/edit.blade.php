@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <x-button.back-button url="super-admin/mapel" />
+            <x-button.back-button url="super-admin/mapel"/>
             <div class="card mt-2">
                 <div class="card-header">
                     <div class="card-title">Edit Mapel</div>
