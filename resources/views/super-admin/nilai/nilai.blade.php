@@ -4,7 +4,7 @@
         <div class="card">
             <div class="col-md-12">
                 <div class="content">
-                    <x-button.back-button url="super-admin/nilai" />
+                    <x-button.back-button url="super-admin/nilai/{{ $anggota->id }}" />
 
 
                     <div class="card-body">
@@ -15,40 +15,40 @@
                             </span>
                         </div>
 
-                        <form action="{{ url('super-admin/nilai-10-ganjil') }}" method="post">
+                        <form action="{{ url('super-admin/nilai') }}" method="post">
                             @csrf
                             <table class="table table-bordered table-striped table-sm">
                                 <tbody>
-                                    <input type="text" name="id_peserta_didik" value="{{ $pesertadidik->id }}"
+                                    <input type="text" name="id_peserta_didik" value="{{ $anggota->id }}"
                                         hidden>
                                     <tr>
 
                                         <td>NAMA PESERTA DIDIK</td>
-                                        <td>{{ $pesertadidik->nama_lengkap }}</td>
+                                        <td>{{ $anggota->pesertadidik->nama_lengkap }}</td>
 
                                     </tr>
                                     <tr>
                                         <td>NIS/NISN</td>
-                                        <td>{{ $pesertadidik->nis }} / {{ $pesertadidik->nisn }}</td>
+                                        <td>{{ $anggota->pesertadidik->nis }} / {{ $anggota->pesertadidik->nisn }}</td>
 
                                     </tr>
-                                    @foreach ($list_kelas->where('kelas', 'Kelas X')->where('semester', 'Ganjil') as $kelas)
+                                    
                                         <tr>
 
                                             <td>KELAS</td>
-                                            <td>{{ $kelas->kelas }}</td>
+                                            <td>{{ $anggota->kelas->kelas }}</td>
 
                                         </tr>
                                         <tr>
 
                                             <td>SEMESTER</td>
-                                            <td>{{ $kelas->semester }}</td>
+                                            <td>{{ $anggota->kelas->semester }}</td>
 
                                         </tr>
-                                        <input type="text" name="id_kelas" value="{{ $kelas->id }}"
+                                        <input type="text" name="id_kelas" value="{{ $anggota->kelas->id }}"
                                             class="form-control" hidden>
-                                            <input type="text" name="semester" value="{{ $kelas->semester }}" hidden>
-                                    @endforeach
+                                            <input type="text" name="semester" value="{{ $anggota->kelas->semester }}" hidden>
+                                    
 
                                 </tbody>
                             </table>
@@ -89,7 +89,7 @@
                                     </tr>
 
                                     @foreach ($list_mapel as $mapel)
-                                        @if ($mapel->id_kelas == $kelas->id)
+                                        @if ($mapel->id_kelas == $anggota->kelas->id)
                                             <tr>
                                                 <input type="text" name="mapel[{{ $mapel->id }}]" value="{{ $mapel->id }}" hidden>
                                                 <th>{{ $loop->iteration }}</th>

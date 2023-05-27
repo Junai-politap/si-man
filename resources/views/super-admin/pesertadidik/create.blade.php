@@ -61,10 +61,10 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Tanggal Lahir</label>
-                                        <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                            <input type="date" class="form-control datetimepicker-input" name="tanggal_lahir" >
+                                        
+                                            <input type="date" class="form-control" name="tanggal_lahir" >
                                             
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>

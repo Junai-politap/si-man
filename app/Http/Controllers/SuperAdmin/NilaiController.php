@@ -3,20 +3,21 @@
 namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Anggota;
 use App\Models\Kelas;
 use Illuminate\Http\Request;
-use App\Models\Nilai10Ganjil;
+use App\Models\Nilai;
 use App\Models\NilaiTambahan;
 use App\Models\Mapel;
 use App\Models\PesertaDidik;
 
 
-class NilaiKelas10GanjilController extends Controller
+class NilaiController extends Controller
 {
     public function index()
     {
 
-        $data['list_pesertadidik'] = PesertaDidik::all();
+        $data['list_kelas'] = Kelas::all();
         return view('super-admin.nilai.index', $data);
     }
 
@@ -30,19 +31,20 @@ class NilaiKelas10GanjilController extends Controller
         
         foreach (request('mapel') as $id_mapel => $id_mapel) {
 
-        $nilai10ganjil = New Nilai10Ganjil();
-        $nilai10ganjil->id_mapel = $id_mapel;
-        $nilai10ganjil->id_peserta_didik = request('id_peserta_didik');
-        $nilai10ganjil->tahun_pelajaran = request('tahun_pelajaran');
-        $nilai10ganjil->semester = request('semester');
-        $nilai10ganjil->kkm_pengetahuan = request('kkm_pengetahuan');
-        $nilai10ganjil->nilai_pengetahuan = request('nilai_pengetahuan');
-        $nilai10ganjil->predikat_pengetahuan = request('predikat_pengetahuan');
-        $nilai10ganjil->nilai_keterampilan = request('nilai_keterampilan');
-        $nilai10ganjil->predikat_keterampilan = request('predikat_keterampilan');
-        $nilai10ganjil->spiritual_sikap = request('spiritual_sikap');
-        $nilai10ganjil->sosial_sikap = request('sosial_sikap');
-        $nilai10ganjil->save();      
+        $nilai = New Nilai();
+        $nilai->id_mapel = $id_mapel;
+        $nilai->id_kelas = request('id_kelas');
+        $nilai->id_peserta_didik = request('id_peserta_didik');
+        $nilai->tahun_pelajaran = request('tahun_pelajaran');
+        $nilai->semester = request('semester');
+        $nilai->kkm_pengetahuan = request('kkm_pengetahuan');
+        $nilai->nilai_pengetahuan = request('nilai_pengetahuan');
+        $nilai->predikat_pengetahuan = request('predikat_pengetahuan');
+        $nilai->nilai_keterampilan = request('nilai_keterampilan');
+        $nilai->predikat_keterampilan = request('predikat_keterampilan');
+        $nilai->spiritual_sikap = request('spiritual_sikap');
+        $nilai->sosial_sikap = request('sosial_sikap');
+        $nilai->save();      
 
         }
 
@@ -57,25 +59,27 @@ class NilaiKelas10GanjilController extends Controller
         $nilai_tambahan->ekskul_olahraga = request('ekskul_olahraga');
         $nilai_tambahan->save();
 
-        return redirect('super-admin/nilai')->with('success', 'Data Berhasil Ditambahkan');
+
+        $id_kelas = request('id_kelas');
+        return redirect('super-admin/nilai/'.$id_kelas)->with('success', 'Data Berhasil Ditambahkan');
     }
 
-    public function show($pesertadidik)
+    public function show($kelas)
     {
 
-        $data['pesertadidik'] = PesertaDidik::find($pesertadidik);
-        $data['list_kelas'] = Kelas::all();
+        $data['kelas'] = Kelas::find($kelas);
+        $data['list_anggota'] = Anggota::where('id_kelas', $kelas)->get();
         return view('super-admin.nilai.show', $data);
     }
 
-    public function edit(Nilai10Ganjil $nilai_kelas10ganjil)
+    public function edit(nilai $nilai_kelas10ganjil)
     {
 
         $data['nilai'] = $nilai_kelas10ganjil;
         return view('nilai.edit', $data);
     }
 
-    public function update(Nilai10Ganjil $nilai_kelas10ganjil)
+    public function update(nilai $nilai_kelas10ganjil)
     {
         $nilai_kelas10ganjil->id_mapel = request('id_mapel');
         $nilai_kelas10ganjil->t = request('id_peserta_didik');
@@ -102,30 +106,17 @@ class NilaiKelas10GanjilController extends Controller
     public function destroy($nilai_kelas10ganjil)
     {
 
-        Nilai10Ganjil::destroy($nilai_kelas10ganjil);
+        nilai::destroy($nilai_kelas10ganjil);
 
         return redirect('super-admin/nilai')->with('danger', 'Data Berhasil Dihapus');
     }
 
-    public function tambah_nilai10ganjil(PesertaDidik $pesertadidik)
+    public function nilai($anggota)
     {
-        $data['list_mapel'] = Mapel::all();
-        $data['list_kelas'] = Kelas::all();
-        $data['pesertadidik'] = $pesertadidik;
-        return view('super-admin.nilai.tambah-nilai-10-ganjil', $data);
-    }
-
-    public function detail($pesertadidik)
-    {
-        $data['pesertadidik'] = PesertaDidik::find($pesertadidik);
-        $data['list_kelas'] = Kelas::all();
-        $data['list_mapel'] = Mapel::all();
+        $data['anggota']= Anggota::find($anggota);
         $data['list_mapel'] = Mapel::all();
 
-        $data['list_nilai10ganjil'] = Nilai10Ganjil::where('id_peserta_didik', $pesertadidik)->get();
-        $data['list_tahun_ajar'] = Nilai10Ganjil::where('id_peserta_didik', $pesertadidik)->take(1)->get();
-        $data['list_nilai_tambahan'] = NilaiTambahan::where('id_peserta_didik', $pesertadidik)->get();
-        return view('super-admin.nilai.detail', $data);
+        return view('super-admin.nilai.nilai', $data);
     }
 
 }

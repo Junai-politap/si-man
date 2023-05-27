@@ -1,122 +1,44 @@
 <x-app>
 
-    <div class="container-fluid mt-3">
-        <div class="card">
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row mb-2">
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
                         <x-button.back-button url="super-admin/nilai" />
-
+                        <h3 class="title text-center">Data Anggota {{ $kelas->kelas }}</h3>
                     </div>
-                    <h3>Detail Nilai {{ $pesertadidik->nama_lengkap }}</h3>
-                </div>
-            </div>
-            <br>
-            <div class="row mb-10">
-                <div class="col-md-12">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4">
 
-                                <div class="small-box bg-info">
-                                    <div class="inner">
-                                        <h3>Kelas X</h3>
+                    <div class="mt-3">
+                        <div class="card-body">
 
-                                        <p>Ganjil</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-stats-bars"></i>
-                                    </div>
+                            <div class="table-responsive">
+                                <table id="example2" class="table table-bordered table-striped">
+                                    <thead class="thead-default">
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">Aksi</th>
+                                        <th class="text-center">NIS/NISN</th>
+                                        <th class="text-center">Nama Anggota</th>
 
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-10-ganjil"
-                                        class="small-box-footer btn btn-info">Tambah Nilai
-                                        <i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($list_anggota as $anggota)
+                                            <tr>
+                                                <td class="text-center">{{ $loop->iteration }}</td>
+                                                <td class="text-center">
+                                                    <div class="btn-group">
+                                                        <a href="{{ url("super-admin/nilai/$anggota->id") }}/nilai" class="btn btn-primary"><span
+                                                                class="fa fa-plus"></span> Tambah Nilai</a>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">{{ $anggota->pesertadidik->nis }}
+                                                    /{{ $anggota->pesertadidik->nis }}</td>
+                                                <td class="text-center">{{ $anggota->pesertadidik->nama_lengkap }}</td>
 
-                                <div class="small-box bg-info">
-                                    <div class="inner">
-                                        <h3>Kelas X</h3>
-
-                                        <p>Genap</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-stats-bars"></i>
-                                    </div>
-
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-10-genap"
-                                        class="small-box-footer btn btn-info">Tambah Nilai
-                                        <i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-
-                                <div class="small-box bg-info">
-                                    <div class="inner">
-                                        <h3>Kelas XI</h3>
-
-                                        <p>Ganjil</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-stats-bars"></i>
-                                    </div>
-
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-11-ganjil"
-                                        class="small-box-footer btn btn-info">Tambah Nilai
-                                        <i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="small-box bg-info">
-                                    <div class="inner">
-                                        <h3>Kelas XI</h3>
-                                        <p>Genap</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-stats-bars"></i>
-                                    </div>
-
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-11-genap"
-                                        class="small-box-footer btn btn-info">Tambah Nilai
-                                        <i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-
-                                <div class="small-box bg-info">
-                                    <div class="inner">
-                                        <h3>Kelas XII</h3>
-
-                                        <p>Ganjil</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-stats-bars"></i>
-                                    </div>
-
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-12-ganjil"
-                                        class="small-box-footer btn btn-info">Tambah Nilai
-                                        <i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-
-                                <div class="small-box bg-info">
-                                    <div class="inner">
-                                        <h3>Kelas XII</h3>
-
-                                        <p>Genap</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-stats-bars"></i>
-                                    </div>
-
-                                    <a href="{{ url('super-admin/nilai', $pesertadidik->id) }}/tambah-nilai-12-genap"
-                                        class="small-box-footer btn btn-info">Tambah Nilai
-                                        <i class="fa fa-plus"></i></a>
-                                </div>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -124,7 +46,5 @@
             </div>
         </div>
     </div>
-    
-
 
 </x-app>

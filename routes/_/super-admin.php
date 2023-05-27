@@ -9,7 +9,7 @@ use App\Http\Controllers\Superadmin\DataCoverController;
 use App\Http\Controllers\Superadmin\KelasController;
 use App\Http\Controllers\Superadmin\MapelController;
 use App\Http\Controllers\Superadmin\RegisterController;
-use App\Http\Controllers\Superadmin\NilaiKelas10GanjilController;
+use App\Http\Controllers\Superadmin\NilaiController;
 
 Route::prefix('/')->middleware('auth:super-admin')->group(function () {
 
@@ -26,27 +26,13 @@ Route::prefix('/')->middleware('auth:super-admin')->group(function () {
     Route::resource('data-cover', DataCoverController::class);
     
     Route::resource('kelas', KelasController::class);
+    Route::post('kelas/store-kelas', [KelasController::class, 'storeKelas']);
     
     Route::resource('mapel', MapelController::class);
     
-    Route::resource('nilai', NilaiKelas10GanjilController::class);
-    Route::get('nilai/{pesertadidik}/detail', [NilaiKelas10GanjilController::class, 'detail']);
-    Route::get('nilai/{pesertadidik}/tambah-nilai-10-ganjil', [NilaiKelas10GanjilController::class, 'tambah_nilai10ganjil']);
-    Route::post('nilai-10-ganjil', [NilaiKelas10GanjilController::class, 'store']);
-    Route::put('nilai/{pesertadidik}/tambah-nilai-10-ganjil', [NilaiKelas10GanjilController::class, 'update']);
-
-
-
-
-    Route::get('nilai/{pesertadidik}/tambah-nilai-10-genap', [NilaiController::class, 'tambah-nilai-10-genap']);
-    Route::get('nilai/{pesertadidik}/tambah-nilai-11-ganjil', [NilaiController::class, 'tambah-nilai-11-ganjil']);
-    Route::get('nilai/{pesertadidik}/tambah-nilai-11-genap', [NilaiController::class, 'tambah-nilai-11-genap']);
-    Route::get('nilai/{pesertadidik}/tambah-nilai-12-ganjil', [NilaiController::class, 'tambah-nilai-12-ganjil']);
-    Route::get('nilai/{pesertadidik}/tambah-nilai-12-genap', [NilaiController::class, 'tambah-nilai-12-genap']);
-
-
-    
-
+    Route::resource('nilai', NilaiController::class);
+    Route::get('nilai/{anggota}/nilai', [NilaiController::class, 'nilai']);
+   
     Route::resource('register', RegisterController::class);
     Route::get('register/{register}/cetak_pdf', [RegisterController::class, 'cetak_pdf']);
     

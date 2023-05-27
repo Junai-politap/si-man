@@ -15,11 +15,6 @@ class PesertaDidik extends Model
         return $this->belongsTo(Nilai::class, 'id');
     }
 
-    function Nilai10Ganjil(){
-        return $this->belongsTo(Nilai10Ganjil::class, 'id');
-    }
-
-    
     function Anggota(){
         return $this->belongsTo(Anggota::class, 'id');
     }

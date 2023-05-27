@@ -8,7 +8,7 @@ use App\Models\Kelas;
 use App\Models\PesertaDidik;
 use App\Models\DataCover;
 use App\Models\Mapel;
-use App\Models\Nilai10Ganjil;
+use App\Models\Nilai;
 use App\Models\SuperAdmin;
 use App\Models\User;
 
@@ -81,7 +81,7 @@ class SuperAdminController extends Controller
         $data['datacover'] = Datacover::all()->count();
         $data['kelas'] = Kelas::all()->count();
         $data['mapel'] = Mapel::all()->count();
-        $data['nilai_kelas10ganjil'] = Nilai10Ganjil::all()->count();
+        $data['nilai_kelas10ganjil'] = Nilai::all()->count();
         
         return view('super-admin.index', $data);
     

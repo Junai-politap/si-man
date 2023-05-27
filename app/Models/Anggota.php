@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Izin;
-use Illuminate\Support\Str;
+
 use App\Models\Model;
 use App\Models\PesertaDidik;
 use App\Models\Kelas;

@@ -2,16 +2,15 @@
 namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Anggota;
 use App\Models\Kelas;
 use App\Models\PesertaDidik;
-
-
 
 class KelasController extends Controller{
     function index(){
        
         $data['list_kelas'] = Kelas::all();
+        
         return view('super-admin.kelas.index', $data);
     }
 
@@ -33,9 +32,12 @@ class KelasController extends Controller{
     
     }
 
-    function show(Kelas $kelas){
+    function show($kelas){
 
-        $data['list_pesertadidik'] =  PesertaDidik::all();
+        $data['kelas'] =  Kelas::find($kelas);
+        $data['list_anggota'] = Anggota::where('id_kelas', $kelas)->get();
+        $data['list_peserta_didik'] = PesertaDidik::all();
+
         return view('super-admin.kelas.show', $data);
         
     }
@@ -64,5 +66,15 @@ class KelasController extends Controller{
      
     }
 
+    public function storeKelas()
+    {
+        foreach (request('peserta_didik') as $id_peserta_didik => $value) {
+            $anggota = new Anggota;
+            $anggota->id_peserta_didik = $id_peserta_didik;
+            $anggota->id_kelas = request('id_kelas');
+            $anggota->save();
+        }
+        return back()->with('success', 'Anggota Berhasil di Tambahkan');
+    }
     
 }

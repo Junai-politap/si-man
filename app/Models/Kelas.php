@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Model;
 use App\Models\Anggota;
 use App\Models\Mapel;
-use App\Models\NilaiTambahan;
+
 class Kelas extends Model
 {
     protected $table = 'kelas';
