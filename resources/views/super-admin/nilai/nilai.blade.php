@@ -4,7 +4,7 @@
         <div class="card">
             <div class="col-md-12">
                 <div class="content">
-                    <x-button.back-button url="super-admin/nilai/{{ $anggota->id }}" />
+                    <x-button.back-button url="super-admin/nilai/{{$anggota->id}}" />
 
 
                     <div class="card-body">
@@ -19,7 +19,7 @@
                             @csrf
                             <table class="table table-bordered table-striped table-sm">
                                 <tbody>
-                                    <input type="text" name="id_peserta_didik" value="{{ $anggota->id }}"
+                                    <input type="text" name="id_anggota" value="{{ $anggota->id }}"
                                         hidden>
                                     <tr>
 

@@ -24,6 +24,8 @@ Route::prefix('/')->middleware('auth:super-admin')->group(function () {
     Route::resource('peserta-didik', PesertaDidikController::class);
     
     Route::resource('data-cover', DataCoverController::class);
+    Route::get('data-cover/{datacover}/cetak_pdf', [DataCoverController::class, 'cetak_pdf']);
+
     
     Route::resource('kelas', KelasController::class);
     Route::post('kelas/store-kelas', [KelasController::class, 'storeKelas']);
@@ -32,9 +34,13 @@ Route::prefix('/')->middleware('auth:super-admin')->group(function () {
     
     Route::resource('nilai', NilaiController::class);
     Route::get('nilai/{anggota}/nilai', [NilaiController::class, 'nilai']);
+    Route::get('nilai/{anggota}/edit', [NilaiController::class, 'edit']);
+    Route::put('nilai/{anggota}', [NilaiController::class, 'update']);
+    Route::delete('nilai/{anggota}', [NilaiController::class, 'destroy']);
+
    
     Route::resource('register', RegisterController::class);
-    Route::get('register/{register}/cetak_pdf', [RegisterController::class, 'cetak_pdf']);
+    Route::get('register/cetak_register.pdf', [RegisterController::class, 'cetak_pdf']);
     
    
 });

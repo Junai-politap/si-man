@@ -21,18 +21,14 @@
                                 <thead >
                                     <th class="text-center">No</th>
                                     <th class="text-center">Aksi</th>
-                                    <th class="text-center">Nama Sekolah</th>
-                                    <th class="text-center">NSS/NPSN</th>                   
-                                    <th class="text-center">Nama Kepala Sekolah</th>
-                                    <th class="text-center">Nama Petugas</th>
                                     <th class="text-center">Tahun Pelajaran</th>
                                 
                                 </thead>
                                 <tbody>
                                     @foreach ($list_datacover as $datacover)
                                         <tr>
-                                            <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td class="text-center">
+                                            <td class="text-center" width="50">{{ $loop->iteration }}</td>
+                                            <td class="text-center" width="250">
                                                 <div class="btn-group">
                                                     <x-button.info-button url="super-admin/data-cover"
                                                         id="{{ $datacover->id }}" />
@@ -44,14 +40,7 @@
                                                         id="{{ $datacover->id }}" />
                                                 </div>
                                             </td>
-                                            <td class="text-center">{{ $datacover->nama_sekolah }}</td>
-                                            <td class="text-center">{{ $datacover->nss_npsn }}</td>
-                                            
                                            
-                                            <td class="text-center">{{ $datacover->nama_kepala_sekolah }}</td>
-                                            
-                                            <td class="text-center">{{ $datacover->nama_petugas }}</td>
-                                          
                                             <td class="text-center">{{ $datacover->tahun_pelajaran }}</td>
                             
                                             

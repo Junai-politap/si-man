@@ -34,7 +34,7 @@ class NilaiController extends Controller
         $nilai = New Nilai();
         $nilai->id_mapel = $id_mapel;
         $nilai->id_kelas = request('id_kelas');
-        $nilai->id_peserta_didik = request('id_peserta_didik');
+        $nilai->id_anggota = request('id_anggota');
         $nilai->tahun_pelajaran = request('tahun_pelajaran');
         $nilai->semester = request('semester');
         $nilai->kkm_pengetahuan = request('kkm_pengetahuan');
@@ -49,7 +49,7 @@ class NilaiController extends Controller
         }
 
         $nilai_tambahan = new NilaiTambahan();
-        $nilai_tambahan->id_peserta_didik = request('id_peserta_didik');
+        $nilai_tambahan->id_anggota = request('id_anggota');
         $nilai_tambahan->id_kelas = request('id_kelas');
         $nilai_tambahan->sakit = request('sakit');
         $nilai_tambahan->izin = request('izin');
@@ -72,41 +72,47 @@ class NilaiController extends Controller
         return view('super-admin.nilai.show', $data);
     }
 
-    public function edit(nilai $nilai_kelas10ganjil)
-    {
+    public function edit($anggota)
+    {   
+        $data['anggota']= Anggota::find($anggota);
 
-        $data['nilai'] = $nilai_kelas10ganjil;
-        return view('nilai.edit', $data);
+        $data['list_nilai'] = Nilai::where('id_anggota', $anggota)->take(1)->get();  
+        $data['data_nilai'] = Nilai::where('id_anggota', $anggota)->get();  
+        $data['list_mapel'] = Mapel::all();
+        return view('super-admin.nilai.edit', $data);
     }
 
-    public function update(nilai $nilai_kelas10ganjil)
+    public function update(nilai $nilai)
     {
-        $nilai_kelas10ganjil->id_mapel = request('id_mapel');
-        $nilai_kelas10ganjil->t = request('id_peserta_didik');
-        $nilai_kelas10ganjil->tahun_pelajaran = request('tahun_pelajaran');
-        $nilai_kelas10ganjil->semester = request('semester');
-        $nilai_kelas10ganjil->kkm_pengetahuan = request('kkm_pengetahuan');
-        $nilai_kelas10ganjil->nilai_pengetahuan = request('nilai_pengetahuan');
-        $nilai_kelas10ganjil->predikat_pengetahuan = request('predikat_pengetahuan');
-        $nilai_kelas10ganjil->nilai_keterampilan = request('nilai_keterampilan');
-        $nilai_kelas10ganjil->predikat_keterampilan = request('predikat_keterampilan');
-        $nilai_kelas10ganjil->spiritual_sikap = request('spiritual_sikap');
-        $nilai_kelas10ganjil->sosial_sikap = request('sosial_sikap');
-        $nilai_kelas10ganjil->ekskul_pramuka = request('ekskul_pramuka');
-        $nilai_kelas10ganjil->ekskul_olahraga = request('ekskul_olahraga');
-        $nilai_kelas10ganjil->ekskul_btq = request('ekskul_btq');
-        $nilai_kelas10ganjil->sakit = request('sakit');
-        $nilai_kelas10ganjil->izin = request('izin');
-        $nilai_kelas10ganjil->tanpaketerangan = request('tanpaketerangan');
-        $nilai_kelas10ganjil->save();
+        $nilai->id_mapel = request('id_mapel');
+        $nilai->id_kelas = request('id_kelass');
+        $nilai->id_anggota = request('id_anggota');
+        $nilai->tahun_pelajaran = request('tahun_pelajaran');
+        $nilai->semester = request('semester');
+        $nilai->kkm_pengetahuan = request('kkm_pengetahuan');
+        $nilai->nilai_pengetahuan = request('nilai_pengetahuan');
+        $nilai->predikat_pengetahuan = request('predikat_pengetahuan');
+        $nilai->nilai_keterampilan = request('nilai_keterampilan');
+        $nilai->predikat_keterampilan = request('predikat_keterampilan');
+        $nilai->spiritual_sikap = request('spiritual_sikap');
+        $nilai->sosial_sikap = request('sosial_sikap');
+        $nilai->ekskul_pramuka = request('ekskul_pramuka');
+        $nilai->ekskul_olahraga = request('ekskul_olahraga');
+        $nilai->ekskul_btq = request('ekskul_btq');
+        $nilai->sakit = request('sakit');
+        $nilai->izin = request('izin');
+        $nilai->tanpaketerangan = request('tanpaketerangan');
+        $nilai->save();
+
+        
 
         return redirect('super-admin/nilai')->with('success', 'Data Berhasil Diedit');
     }
 
-    public function destroy($nilai_kelas10ganjil)
+    public function destroy($nilai)
     {
 
-        nilai::destroy($nilai_kelas10ganjil);
+        nilai::destroy($nilai);
 
         return redirect('super-admin/nilai')->with('danger', 'Data Berhasil Dihapus');
     }
@@ -118,5 +124,7 @@ class NilaiController extends Controller
 
         return view('super-admin.nilai.nilai', $data);
     }
+
+    
 
 }

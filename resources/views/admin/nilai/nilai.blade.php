@@ -1,21 +1,21 @@
-<x-app>
+<x-admin>
 
     <div class="container-fluid mt-3">
         <div class="card">
             <div class="col-md-12">
                 <div class="content">
-                    <x-button.back-button url="super-admin/nilai/{{$anggota->id}}" />
+                    <x-button.back-button url="admin/nilai" />
 
 
                     <div class="card-body">
 
                         <div class="mt-4 d-flex justify-content-center">
                             <span>
-                                <h4>EDIT NILAI MAN 2 KETAPANG</h4>
+                                <h4>TAMBAH NILAI MAN 2 KETAPANG</h4>
                             </span>
                         </div>
 
-                        <form action="{{ url('super-admin/nilai', $anggota->id) }}" method="post">
+                        <form action="{{ url('admin/nilai') }}" method="post">
                             @csrf
                             <table class="table table-bordered table-striped table-sm">
                                 <tbody>
@@ -63,11 +63,9 @@
                                             <label for="" class="control-label">TAHUN PELAJARAN</label>
                                         </th>
                                         <th colspan="7">
-                                            @foreach ($list_nilai as $nilai)
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="tahun_pelajaran" value="{{$nilai->tahun_pelajaran}}">
+                                                <input type="text" class="form-control" name="tahun_pelajaran">
                                             </div>
-                                            @endforeach
                                         </th>
                                     </tr>
                                     <tr>
@@ -96,20 +94,18 @@
                                                 <input type="text" name="mapel[{{ $mapel->id }}]" value="{{ $mapel->id }}" hidden>
                                                 <th>{{ $loop->iteration }}</th>
                                                 <td>{{ $mapel->mapel }}</td>
-                                                @foreach ($data_nilai as $nilai)
-                                                
                                                 <td>
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            name="nilai_pengetahuan" value="{{$nilai->nilai_pengetahuan}}">
+                                                            name="nilai_pengetahuan">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-group">
 
                                                         <input type="text" class="form-control"
-                                                            name="kkm_pengetahuan" >
+                                                            name="kkm_pengetahuan">
                                                     </div>
                                                 </td>
                                                 <td>
@@ -143,7 +139,6 @@
                                                         <input type="text" class="form-control" name="sosial_sikap">
                                                     </div>
                                                 </td>
-                                                @endforeach
                                             </tr>
                                         @endif
                                     @endforeach
@@ -234,4 +229,4 @@
         </div>
     </div>
 
-</x-app>
+</x-admin>

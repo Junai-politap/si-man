@@ -8,7 +8,7 @@ use App\Models\PesertaDidik;
 
 
 
-class RegisterSuperController extends Controller{
+class RegisterController extends Controller{
     function index(){
        
         
@@ -58,6 +58,7 @@ class RegisterSuperController extends Controller{
     
     public function cetak_pdf()
     {
+        
         return view('superadmin.register.cetak_pdf');
     }
 
