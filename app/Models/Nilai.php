@@ -4,7 +4,7 @@ namespace App\Models;
 use App\Models\Model;
 
 use App\Models\Mapel;
-use App\Models\PesertaDidik;
+use App\Models\Anggota;
 
 class Nilai extends Model
 {
@@ -15,7 +15,7 @@ class Nilai extends Model
         return $this->belongsTo(Mapel::class, 'id_mapel');
     }
 
-    function PesertaDidik(){
-        return $this->belongsTo(PesertaDidik::class, 'id_peserta_didik');
+    function Anggota(){
+        return $this->belongsTo(Anggota::class, 'id_anggota');
     }
 }  

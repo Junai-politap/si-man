@@ -18,17 +18,17 @@
                         <div class="table-responsive">
                             <table id="example2" class="table table-bordered table-striped">
                                 <thead class="thead-default">
-                                    <th>No</th>
-                                    <th>Aksi</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">Aksi</th>
+                                    <th class="text-center">Nama</th>
+                                    <th class="text-center">Email</th>
 
                                 </thead>
                                 <tbody>
                                     @foreach ($list_superadmin as $superadmin)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>
+                                        <tr class="text-center">
+                                            <td width="50">{{ $loop->iteration }}</td>
+                                            <td width="250">
                                                 <div class="btn-group">
                                                     <x-button.delete-button url="super-admin/super-admin"
                                                         id="{{ $superadmin->id }}" />

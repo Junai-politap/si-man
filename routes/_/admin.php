@@ -25,7 +25,9 @@ Route::group(['middleware' => 'auth:admin'], function () {
     
     
     Route::resource('nilai', NilaiController::class);
-    
+    Route::get('nilai/{anggota}/nilai', [NilaiController::class, 'nilai']);
+
+
     Route::resource('register', RegisterController::class);
     Route::get('register/{register}/cetak_pdf', [RegisterController::class, 'cetak_pdf']);
 });

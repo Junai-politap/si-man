@@ -51,19 +51,91 @@
 
     <div class="container-fluid mt-2">
         <div class="row">
+            
             <div class="col-md-12">
+                <x-button.back-button url="super-admin/data-cover" />
+
+
                 <div class="book">
-                    <div class="page">
-                        <div class="subpage">
-                            <p>Page 1/1</p>
-
-                            Masukan properti dkatanya disini
-                        </div>
-                    </div>
 
                     <div class="page">
-                        <div class="subpage">Page 2/2</div>
+                        <a href="{{url('super-admin/data-cover', $datacover->id)}}/cetak_pdf" target="_blank" class="btn btn-success float-right"> Cetak</a>
+
+
+                        <body>
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="text-center ">
+                                <img src="https://www.freepnglogos.com/uploads/tut-wuri-handayani-png-logo/vector-wuri-handayani-warna-0.png"
+                                    class="rounded " width="170px">
+                            </div>
+
+                            <br>
+                            <br>
+                            <br>
+                            <div class="text-center">
+                                <h2>BUKU INDUK PESERTA DIDIK</h2>
+                                <h3>SEKOLAH MENENGAH ATAS</h3>
+                                <h2>( SMA )</h2>
+                            </div>
+
+                            <br>
+                            <div class="text-center">
+                                <h4>KURIKULUM TINGKAT SATUAN PENDIDIKAN</h4>
+                                <h3><B>KURIKULUM 13</B></h3>
+                                <h4><B>TAHUN PELAJARAN {{$datacover->tahun_pelajaran}}</B></h4>
+                            </div>
+
+                            <br>
+                            <table class="table table-borderless" style="margin-left: 200px">
+                                <tbody >
+                                    <tr>
+                                        <td width="50px" style="font-size: 12px;">NAMA SEKOLAH</td>
+                                        <td   width="10px" style="font-size: 12px; margin-left:-10px;">:</td>
+                                        <td  style="font-size: 12px">MAN 2 KETAPANG</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 12px">NSS/NPSN</td>
+                                        <td style="font-size: 12px">:</td>
+                                        <td style="font-size: 12px">1010150619/20233178</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 12px">ALAMAT SEKOLAH</td>
+                                        <td style="font-size: 12px">:</td>
+                                        <td style="font-size: 12px">Jl. Rahadi Usman Desa Sungai Besar</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 12px">DESA/KELURAHAN</td>
+                                        <td style="font-size: 12px">:</td>
+                                        <td style="font-size: 12px">Sungai Besar</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 12px">KECAMATAN</td>
+                                        <td style="font-size: 12px">:</td>
+                                        <td style="font-size: 12px">Matan Hilir Selatan</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 12px">KABUPATEN/KOTA</td>
+                                        <td style="font-size: 12px">:</td>
+                                        <td style="font-size: 12px">Ketapang</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 12px">PROVINSI</td>
+                                        <td style="font-size: 12px">:</td>
+                                        <td style="font-size: 12px">Kalimantan Barat</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </body>
+
+
                     </div>
+
+                  
 
                 </div>
             </div>

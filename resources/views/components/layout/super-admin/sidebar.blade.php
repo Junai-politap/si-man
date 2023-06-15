@@ -69,7 +69,7 @@
                         class="nav-link {{ checkRouteActive('super-admin/register') }}">
                         <i class="nav-icon fa fa-print"></i>
                         <p>
-                            Cetak Register
+                            Form Register
 
                         </p>
                     </a>

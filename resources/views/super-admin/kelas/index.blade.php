@@ -24,8 +24,8 @@
                                 <tbody>
                                     @foreach ($list_kelas as $kelas)
                                         <tr>
-                                            <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td class="text-center">
+                                            <td class="text-center" width="50">{{ $loop->iteration }}</td>
+                                            <td class="text-center" width="250">
                                                 <div class="btn-group">
 
                                                     <x-button.info-button url="super-admin/kelas"

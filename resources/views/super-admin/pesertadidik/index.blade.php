@@ -16,6 +16,7 @@
                                 class="fa fa-plus"></i>
                             Tambah
                             Data</a>
+                          
                         <div class="table-responsive mt-3">
                             <table id="example2" class="table table-bordered table-striped">
                                 <thead>
@@ -29,9 +30,9 @@
                                 <tbody>
                                     @foreach ($list_pesertadidik as $pesertadidik)
                                         <tr>
-                                            <td class="text-center">{{ $loop->iteration }}</td>
+                                            <td class="text-center" width="50">{{ $loop->iteration }}</td>
 
-                                            <td class="text-center">
+                                            <td class="text-center" width="250">
                                                 <div class="btn-group">
                                                     <x-button.info-button url="super-admin/peserta-didik"
                                                         id="{{ $pesertadidik->id }}" />

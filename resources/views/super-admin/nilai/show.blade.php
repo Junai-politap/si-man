@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <x-button.back-button url="super-admin/nilai" />
+                        <x-button.back-button url="super-admin/nilai"/>
                         <h3 class="title text-center">Data Anggota {{ $kelas->kelas }}</h3>
                     </div>
 
@@ -24,11 +24,16 @@
                                     <tbody>
                                         @foreach ($list_anggota as $anggota)
                                             <tr>
-                                                <td class="text-center">{{ $loop->iteration }}</td>
-                                                <td class="text-center">
+                                                <td class="text-center" width="50">{{ $loop->iteration }}</td>
+                                                <td class="text-center" width="250">
                                                     <div class="btn-group">
                                                         <a href="{{ url("super-admin/nilai/$anggota->id") }}/nilai" class="btn btn-primary"><span
                                                                 class="fa fa-plus"></span> Tambah Nilai</a>
+                                                                
+                                                        <a href="{{ url("super-admin/nilai/$anggota->id") }}/edit" class="btn btn-warning"><span
+                                                                 class="fa fa-edit"></span> Edit </a>
+                                                               
+                                                            
                                                     </div>
                                                 </td>
                                                 <td class="text-center">{{ $anggota->pesertadidik->nis }}

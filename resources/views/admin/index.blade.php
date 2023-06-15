@@ -8,7 +8,7 @@
     </div><br>
     <div class="row">
         <div class="col-lg-3 col-6">
-            <div class="small-box bg-info">
+            <div class="small-box bg-success">
                 <div class="inner">
                     <h3>{{ $pesertadidik }}</h3>
 
@@ -35,7 +35,7 @@
 
 
         <div class="col-lg-3 col-6">
-            <div class="small-box bg-warning">
+            <div class="small-box bg-success">
                 <div class="inner">
                     <h3>{{ $kelas }}</h3>
 
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-6">
-            <div class="small-box bg-danger">
+            <div class="small-box bg-success">
                 <div class="inner">
                     <h3>{{ $mapel }}</h3>
 
